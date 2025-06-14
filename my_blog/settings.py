@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-24&73+%e+makp451%ulf9(w8sw65f50%%*^x$)yljh9fq8*x!5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1',]
 
 
 # Application definition
@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.admin",
+    "resume",
 ]
 
 MIDDLEWARE = [
@@ -79,6 +81,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": os.getenv('DATABASE_ENGINE', 'django.db.backends.postgresql'),
+#         "NAME": os.getenv('DATABASE_NAME', 'db'),
+#         "USER": os.getenv('DATABASE_USERNAME', 'user'),
+#         "PASSWORD": os.getenv('DATABASE_PASSWORD', 'password'),
+#         "HOST": os.getenv('DATABASE_HOST', '127.0.0.1'),
+#         "PORT": os.getenv('DATABASE_PORT', 5432),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
