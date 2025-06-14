@@ -1,10 +1,140 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Resume{% endblock %}</title>
 </head>
-<body>
+    <body>
+        {% block content %}
+            <div class="specializations">
+            <h2 class="section-title">
+                <i class="fa-solid fa-laptop-code title-icon"></i>
+                    Специализация
+            </h2>
+                <h3 class="specializations">DevOps инженер</h3>
+                <h3 class="specializations">SRE инженер</h3>
+            <h2 class="section-title">
+                <i class="fa-solid fa-briefcase title-icon"></i>
+                    Опыт работы
+            </h2>
+                    <h3 class="specialization-title">Astra Linux</h3>
 
-</body>
+                    <div class="tech-stack">
+                        <h4 class="section-subtitle">Время работы: Февраль 2025 - н.в.</h4>
+                        <h4 class="section-subtitle">Технологический стэк:</h4>
+                        <ul class="stack-list">
+                            <li><span class="category">OC и инфраструктура:</span> Linux (Astra/RedOS/Alt), FreeIPA</li>
+                            <li><span class="category">Виртуализация и контейнеризация:</span> Docker, Vagrant, Proxmox</li>
+                            <li><span class="category">CI/CD:</span> Bamboo, GitlabCI (Gitflic), Artifactory</li>
+                            <li><span class="category">Управление конфигурациями:</span> Ansible (AWX), SaltStack</li>
+                            <li><span class="category">Языки и скрипты:</span> Python (CLI-утилиты, автоматизация), Bash</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience">
+                        <h4 class="section-subtitle">Опыт работы:</h4>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Сборка и выкладка пакетов:</h5>
+                            <ul class="item-list">
+                                <li>Создание deb (debhelper) и rpm (rpmbuild) пакетов для CLI-утилит и сервисов</li>
+                                <li>Настройка CI для сборки пакетов и публикации их в Artifactory</li>
+                                <li>Уменьшение времени сборки за счет использования кастомных Dockerfile</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Управление конфигурациями:</h5>
+                            <ul class="item-list">
+                                <li>Развертывание стендов с помощью AWX и его настройка</li>
+                                <li>Написание ролей и плейбуков на Ansible для автоматизации развертывания стендов и их конфигурации</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Миграция CI/CD из Bamboo в GitlabCI (Gitflic):</h5>
+                            <ul class="item-list">
+                                <li>Перенес более 20 пайплайнов с сохранением логики и улучшением производительности</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Поддержка и доработка CLI-утилит:</h5>
+                            <ul class="item-list">
+                                <li>Рефакторинг кода на Python, добавление новой логики обработки текущих аргументов и добавление новых</li>
+                                <li>Исправление багов</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 class="specialization-title">СТАРКОВ Групп</h3>
+                        <div class="tech-stack">
+                            <h4 class="section-subtitle">Время работы: Июль 2023 - Февраль 2025</h4>
+                            <h4 class="section-subtitle">Технологический стэк:</h4>
+                            <ul class="stack-list">
+                                <li><span class="category">OC и инфраструктура:</span> Linux (Ubuntu/Astra/RedOS/Alt)</li>
+                                <li><span class="category">Виртуализация и контейнеризация:</span> Docker, Docker-compose, Proxmox</li>
+                                <li><span class="category">Управление конфигурациями:</span> Ansible</li>
+                                <li><span class="category">Языки и скрипты:</span> Python (cкрипты), Bash</li>
+                            </ul>
+                        </div>
+
+
+                    <div class="experience">
+                        <h4 class="section-subtitle">Опыт работы:</h4>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Администрирование и поддержка инфраструктуры:</h5>
+                            <ul class="item-list">
+                                <li>Развертывание и поддержка DirectumRX/HRPro, Liferay</li>
+                                <li>Администрирование Linux-серверов (Ubuntu, Astra, Alt, RedOS), настройка безопасности и производительности</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Настройка высоко доступных (HA) сервисов:</h5>
+                            <ul class="item-list">
+                                <li>Развертывание и настройка HA-кластеров PostgreSQL, MongoDB, RabbitMQ, HAProxy</li>
+                                <li>Конфигурация очередей, обменников, пользователей в RabbitMQ</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Контейнеризация и автоматизация:</h5>
+                            <ul class="item-list">
+                                <li>Сборка Docker-образов (написание Dockerfile)</li>
+                                <li>Автоматизация развертывания и конфигурации с помощью Ansible и Bash/Python-скриптов</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <h5 class="item-title">Мониторинг и логирование:</h5>
+                            <ul class="item-list">
+                                <li>Развертывание Prometheus + Grafana для метрик и алертинга</li>
+                                <li>Настройка ELK/EFK для централизованного сбора и анализа логов</li>
+                            </ul>
+                        </div>
+                    </div>
+            <h2 class="section-title">
+                <i class="fa-solid fa-graduation-cap title-icon"></i>
+                    Образование
+            </h2>
+                <ul class="stack-list">
+                    <li><span class="category">Ярославский государственный аграрный университет</span></li>
+                </ul>
+            <h2 class="section-title">
+                <i class="fa-solid fa-ghost title-icon"></i>
+                    Курсы
+            </h2>
+                <ul class="stack-list">
+                    <li><span class="category">GeekBrains: DevOps engineer</span></li>
+                    <li><span class="category">Rebrain: K8s, Docker, RabbitMQ, HAProxy, Grafana</span></li>
+                    <li><span class="category">Softline: Администратор REDOS</span></li>
+                </ul>
+{#            <h2><i class="fa-solid fa-user"></i> О себе</h2>#}
+{#                <p>A</p>#}
+        </div>
+        {% endblock %}
+    </body>
 </html>
